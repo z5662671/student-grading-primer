@@ -92,7 +92,7 @@ def get_stats():
     students = db.get_all_students()
     
     if (len(students) == 0):
-        return "Failed to get stats", 404
+        return jsonify({"count": 0, "average": 0, "min": 0, "max": 0}), 200
 
     count = 0
     min = -1
